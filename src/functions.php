@@ -28,3 +28,8 @@ function subtract($a, $b): mixed
 
     return add($a, -$b);
 }
+
+function multiply($a, $b): mixed
+{
+    return $a * $b;
+}

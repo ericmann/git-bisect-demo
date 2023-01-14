@@ -73,4 +73,21 @@ final class FunctionTest extends TestCase
             [12., 4, 8.]
         ];
     }
+
+    /**
+     * @dataProvider multiplicationProvider
+     */
+    public function testMultiply($a, $b, $expected): void
+    {
+        $this->assertSame($expected, multiply($a, $b));
+    }
+
+    public function multiplicationProvider(): array
+    {
+        return [
+            [2, 2, 4],
+            [3, 2., 6.],
+            [1, 1., 1.]
+        ];
+    }
 }

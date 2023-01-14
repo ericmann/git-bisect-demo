@@ -2,7 +2,7 @@
 
 This project leverages `git bisect` and PHPUnit to quickly identify the first broken commit in a project change history. 
 
-The initial commit (8550717) was created directly by GitHub upon project creation. The next commit (1b214d2) established a basic application with a suite of unit tests (all passing) to verify basic math functionality.
+The initial commit (8550717) was created directly by GitHub upon project creation. The next commit (916161c) established a basic application with a suite of unit tests (all passing) to verify basic math functionality.
 
 There were 5 commits after that known-good commit that were, due to user error, untested before they were committed. All we know now is that the current `HEAD` of the project is broken. Tests are still passing, but that's due to the `addAll()` function not having appropriate tests.
 
@@ -18,11 +18,7 @@ function testAddAllNegatives(): void
 
 Commit this test to your local copy of the repo. It will fail.
 
-Next, use `git rebase` to reorder commits in the project as follows:
-
-```
-
-```
+Next, use `git rebase` to reorder commits. You should place this new test immediately after the last known good commit (916161c). This will change the commit hash of the test commit and all commits after it.
 
 We've placed the failing test after the last known good commit. It will pass there as we know the project was solid at that time. Now, use `git bisect` to test commits from this known test commit to the current `HEAD` - Git will tell you when it finds the broken commit and you can check the diff on that commit to see _exactly_ what broke.
 
