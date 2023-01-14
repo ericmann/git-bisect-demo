@@ -19,3 +19,12 @@ function addAll(...$items): mixed
 
     return $sum;
 }
+
+function subtract($a, $b): mixed
+{
+    if (!is_numeric($a) || ! is_numeric($b)) {
+        throw new InvalidArgumentException('Input must be numeric!');
+    }
+
+    return add($a, -$b);
+}

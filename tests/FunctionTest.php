@@ -13,7 +13,7 @@ final class FunctionTest extends TestCase
 
     public function additionProvider(): array
     {
-        return [
+       return [
             [2, 3, 5],
             [2, 3., 5.],
             [2., '3', 5.],
@@ -54,6 +54,23 @@ final class FunctionTest extends TestCase
             [[1, 2, 3, 4], 10],
             [[3, 5, 7, 9], 24],
             [[1., 1, 1, 1], 4.]
+        ];
+    }
+
+    /**
+     * @dataProvider subtractionProvider
+     */
+    function testSubtract($a, $b, $expected): void
+    {
+        $this->assertSame($expected, subtract($a, $b));
+    }
+
+    public function subtractionPRovider(): array
+    {
+        return [
+            [5, 3, 2],
+            [10, 1., 9.],
+            [12., 4, 8.]
         ];
     }
 }
