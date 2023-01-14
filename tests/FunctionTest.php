@@ -90,4 +90,21 @@ final class FunctionTest extends TestCase
             [1, 1., 1.]
         ];
     }
+
+    /**
+     * @dataProvider divisionProvider
+     */
+    public function testDivide($a, $b, $expected): void
+    {
+        $this->assertSame($expected, divide($a, $b));
+    }
+
+    public function divisionProvider(): array
+    {
+        return [
+            [2, 2, 1.],
+            [3, 2, 1.5],
+            [1, 1., 1.]
+        ];
+    }
 }

@@ -22,4 +22,6 @@ Next, use `git rebase` to reorder commits. You should place this new test immedi
 
 We've placed the failing test after the last known good commit. It will pass there as we know the project was solid at that time. Now, use `git bisect` to test commits from this known test commit to the current `HEAD` - Git will tell you when it finds the broken commit and you can check the diff on that commit to see _exactly_ what broke.
 
-Use `git rebase` to move our new test back to the `HEAD` of the branch and add another commit fixing the identified error. All tests should now pass and we're finished!
+Use `git rebase` to move our new test back to the `HEAD` of the branch and add another commit fixing the identified error. All tests should now pass as we've identified and fixed the problem!
+
+The next step would be to add similar negative number tests for the _other_ methods that have been added since we handled addition.

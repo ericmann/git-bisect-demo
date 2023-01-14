@@ -22,10 +22,6 @@ function addAll(...$items): mixed
 
 function subtract($a, $b): mixed
 {
-    if (!is_numeric($a) || ! is_numeric($b)) {
-        throw new InvalidArgumentException('Input must be numeric!');
-    }
-
     return add($a, -$b);
 }
 
@@ -36,4 +32,9 @@ function multiply($a, $b): mixed
     }
 
     return $a * $b;
+}
+
+function divide($a, $b): mixed
+{
+    return multiply($a, 1 / $b);
 }
