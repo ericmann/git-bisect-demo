@@ -65,7 +65,7 @@ final class FunctionTest extends TestCase
         $this->assertSame($expected, subtract($a, $b));
     }
 
-    public function subtractionPRovider(): array
+    public function subtractionProvider(): array
     {
         return [
             [5, 3, 2],
