@@ -43,7 +43,7 @@ final class FunctionTest extends TestCase
     /**
      * @dataProvider additionArrayProvider
      */
-    function testAddAll($items, $expected): void
+    public function testAddAll($items, $expected): void
     {
         $this->assertSame($expected, addAll(...$items));
     }
@@ -60,7 +60,7 @@ final class FunctionTest extends TestCase
     /**
      * @dataProvider subtractionProvider
      */
-    function testSubtract($a, $b, $expected): void
+    public function testSubtract($a, $b, $expected): void
     {
         $this->assertSame($expected, subtract($a, $b));
     }
