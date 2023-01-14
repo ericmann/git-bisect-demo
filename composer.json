@@ -1,0 +1,27 @@
+{
+    "name": "ericmann/git-bisect-demo",
+    "description": "PHP demo of git-bisect.",
+    "type": "project",
+    "require": {
+
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "EAMann\\GitBisectDemo\\": "src/"
+        },
+        "files": [
+            "src/functions.php"
+        ]
+    },
+    "authors": [
+        {
+            "name": "Eric Mann",
+            "email": "eric@eamann.com"
+        }
+    ],
+    "minimum-stability": "stable"
+}
